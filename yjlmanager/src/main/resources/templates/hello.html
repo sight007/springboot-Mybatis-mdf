@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style type="text/css">
+      #container{
+        height: 100%;
+        margin: 0px;
+      }
+    </style>
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" >Hello,李明！</p>
+    <!-- <p th:text="${user.name}"></p> -->
+    <hr />
+    <table>
+    <caption>用户列表</caption>
+    <thead>
+      <tr>
+        <th class="char1"><input type="checkbox" name="checkbox1" class="checkall" id="check1"/></th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>年龄</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr th:each="user : ${users}">
+    		<td th:text="${user.name}"></td>
+    		<td th:text="${user.password}"></td>
+    		<td th:text="${user.age}"></td>
+    	</tr>
+    </tbody>
+  </table>
+  <hr />
+  <div id="container" tabindex="0"></div>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&amp;key=2adcfdf4941670d203df1e51ca16dd61"></script>
+    <script type="text/javascript">
+	    var map = new AMap.Map('container',{
+	        resizeEnable: true,
+	        zoom: 10,
+	        center: [116.480983, 40.0958]
+	    });
+	    
+        var map = new AMap.Map('container',{
+            resizeEnable: true,
+            zoom: 10,
+            center: [116.480983, 40.0958]
+        });
+    </script>
+</body>
+</html>
